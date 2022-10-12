@@ -1,11 +1,11 @@
-import { Text, TextProps } from './Text'
-import { Meta, StoryObj } from '@storybook/react' //intellisence enable to objects
+import { Heading, HeadingProps } from './Heading'
+import { Meta, StoryObj } from '@storybook/react'
 
 export default {
-    title: 'Components/Text',
-    component: Text,
-    args: { //same as props on react
-        children: 'Lorem Ipsum',
+    title: 'Components/Heading',
+    component: Heading,
+    args: {
+        children: 'Título',
         size: 'md'
     } ,
     argTypes: {
@@ -16,30 +16,30 @@ export default {
             }
         }
     }
-} as Meta<TextProps>
+} as Meta<HeadingProps>
 
-export  const Default: StoryObj<TextProps> = {}
+export  const Default: StoryObj<HeadingProps> = {}
 
-export  const Small: StoryObj<TextProps> = {
+export  const Small: StoryObj<HeadingProps> = {
     args: {
         size: 'sm'
     }
 }
 
-export  const Large: StoryObj<TextProps> = {
+export  const Large: StoryObj<HeadingProps> = {
     args: {
         size: 'lg'
     }
 }
 
-export  const CustomComp: StoryObj<TextProps> = {
+export  const CustomComp: StoryObj<HeadingProps> = {
     args: {
         asChild: true,
         children: (
-            <p>Text as paragraph</p>
+            <h1>Heading with h1</h1>
         )
     },
-    argTypes: { //remove children from table on storiesbook
+    argTypes: {
         children: {
             table: {
                 disable: true
