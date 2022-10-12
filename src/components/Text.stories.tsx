@@ -5,8 +5,17 @@ export default {
     title: 'Components/Text',
     component: Text,
     args: { //same as props on react
-        children: 'Lorem Ipsum'
-    } 
+        children: 'Lorem Ipsum',
+        size: 'md'
+    } ,
+    argTypes: {
+        size: {
+            options: ['sm', 'md', 'lg'],
+            control: {
+                type: 'inline-radio'
+            }
+        }
+    }
 } as Meta<TextProps>
 
 export  const Default: StoryObj<TextProps> = {}
@@ -29,5 +38,12 @@ export  const CustomComp: StoryObj<TextProps> = {
         children: (
             <p>Testando</p>
         )
+    },
+    argTypes: { //remove children from table on storiesbook
+        children: {
+            table: {
+                disable: true
+            }
+        }
     }
 }
