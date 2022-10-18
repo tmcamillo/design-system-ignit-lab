@@ -19,6 +19,6 @@ module.exports = {
     if(configType === 'PRODUCTION') {
       config.base = '/design-system-ignit-lab/'
     }
-    return confifg
+    return config
   }
 }
