@@ -6,9 +6,10 @@ export interface TextProps {
     size?: 'sm' | 'md' | 'lg';
     children: ReactNode;
     asChild?: boolean;
+    className?: string;
 }
 
-export function Text({size = 'md', children, asChild }: TextProps) { //desestructuring props and setting a default value
+export function Text({size = 'md', children, asChild, className }: TextProps) { //desestructuring props and setting a default value
     const Comp = asChild ? Slot : 'span'; //Slot pass all atributes of Comp direct to first tag passed on asChild
     return (
         <Comp className={
@@ -18,7 +19,8 @@ export function Text({size = 'md', children, asChild }: TextProps) { //desestruc
                     'text-xs': size === 'sm',
                     'text-sm': size === 'md',
                     'text-md': size === 'lg',
-                }
+                },
+                className
             )
             }>{children}
         </Comp>
